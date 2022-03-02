@@ -1687,7 +1687,7 @@ def read_snap_dim(fname):
     dim_dict['PLATFORM'] = sensor.standardize_sensor_name(dim_dict['PLATFORM'])
 
     # wavelength
-    dim_dict['WAVELENGTH'] = SPEED_OF_LIGHT / float(dim_dict['radar_frequency'])
+    dim_dict['WAVELENGTH'] = SPEED_OF_LIGHT / (float(dim_dict['radar_frequency'])* 1e6)
 
     # x/y_first/step_unit 
     transform = root.find("Geoposition/IMAGE_TO_MODEL_TRANSFORM").text.split(',')
